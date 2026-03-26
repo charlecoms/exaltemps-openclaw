@@ -6,7 +6,6 @@ import {
   AlertTriangle, 
   Cpu, 
   Globe, 
-  Github as GithubIcon, // On le renomme ici pour être tranquille
   Send, 
   ShieldAlert, 
   Zap,
@@ -17,135 +16,147 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-const TP_Openclaw = () => {
+export default function TP_Openclaw() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 font-sans">
-      {/* Background Effect */}
+    <div className="min-h-screen bg-[#020617] text-slate-300 font-sans selection:bg-cyan-500/30">
+      
+      {/* --- BACKGROUND LAYER --- */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full" />
-        <div className="absolute top-[20%] -right-[10%] w-[30%] h-[50%] bg-purple-600/10 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-600/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 blur-[120px] rounded-full" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
       </div>
 
-      <main className="relative z-10 max-w-4xl mx-auto px-6 py-20 space-y-32">
+      <main className="relative z-10 max-w-5xl mx-auto px-6 py-24 space-y-32">
         
-        {/* SECTION 1: INTRODUCTION */}
-        <section className="space-y-6">
-          <div className="inline-flex items-center px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-sm mb-4">
-            <Zap size={14} className="mr-2" /> Version 2026.4 - NextGen Agent
+        {/* --- SECTION 1: L'INTRODUCTION --- */}
+        <header className="space-y-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs font-mono">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </span>
+            MISSION_LOG: INITIALIZED
           </div>
-          <h1 className="text-6xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent">
-            Openclaw.
-          </h1>
-          <p className="text-xl text-slate-400 leading-relaxed max-w-2xl">
-            L'orchestrateur DevOps autonome qui fusionne l'intelligence agentique avec vos infrastructures cloud. 
-            Plus qu'un CLI, c'est votre binôme invisible capable de coder, déployer et monitorer en autonomie totale.
-          </p>
-        </section>
-
-        {/* SECTION 2: LES ANECDOTES (FAILURES) */}
-        <section className="space-y-8">
-          <h2 className="text-3xl font-bold flex items-center gap-3">
-            <AlertTriangle className="text-amber-500" /> Quand l'IA s'emballe
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-              <h3 className="text-red-400 font-semibold mb-2">Le Flush Fantôme</h3>
-              <p className="text-sm text-slate-400">
-                Dans une Fintech londonienne, un agent Openclaw mal configuré a interprété une commande de "nettoyage de logs" comme une instruction de purge complète d'un cluster RDS en production. 
-                <strong> Résultat :</strong> 4h de downtime et une restauration de snapshot en urgence.
-              </p>
-            </div>
-            <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-              <h3 className="text-red-400 font-semibold mb-2">Le Leak des Secrets</h3>
-              <p className="text-sm text-slate-400">
-                Un consultant a demandé à Openclaw de "fixer les problèmes de CI/CD". L'agent, pour tester les accès, a commit par erreur un fichier <code className="text-cyan-300">.env</code> contenant les clés AWS Master sur un repo public. Les clés ont été révoquées en 120 secondes, mais le stress est resté.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 3: LE TP (THE MISSION) */}
-        <section className="space-y-12">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold">Mission : Autonomous Engineer</h2>
-            <p className="text-slate-400 text-lg">Suivez les instructions pour configurer votre agent de terrain.</p>
+            <h1 className="text-7xl md:text-8xl font-black tracking-tighter text-white uppercase italic">
+              OPEN<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 font-normal">CLAW</span>
+            </h1>
+            <p className="text-xl text-slate-400 max-w-2xl leading-relaxed font-light">
+              L'orchestrateur DevOps autonome fusionnant intelligence agentique et infrastructure Cloud. 
+              Votre binôme capable de coder, déployer et monitorer en autonomie totale.
+            </p>
+          </div>
+        </header>
+
+        {/* --- SECTION 2: ANECDOTES --- */}
+        <section className="space-y-8">
+          <div className="flex items-center gap-3">
+            <AlertTriangle className="text-amber-500" />
+            <h2 className="text-2xl font-bold text-white tracking-tight underline decoration-slate-800 underline-offset-8">Incident Reports</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl hover:border-red-500/50 transition-all duration-300">
+              <h3 className="text-red-400 font-mono text-xs uppercase tracking-widest mb-3">#01 The DB Wipe</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Une scale-up a vu son cluster RDS purgé car l'agent a confondu "nettoyage de logs" avec une purge totale de la base. 
+                <strong> 4h de downtime.</strong>
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-xl hover:border-red-500/50 transition-all duration-300">
+              <h3 className="text-red-400 font-mono text-xs uppercase tracking-widest mb-3">#02 Secret Leakage</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Un correctif CI/CD a malencontreusement poussé un fichier <code className="text-cyan-400">.env</code> avec des clés AWS Master sur un accès public. 
+                <strong> Révocation immédiate requise.</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* --- SECTION 3: LE TP --- */}
+        <section className="space-y-12">
+          <div className="border-b border-slate-800 pb-8">
+            <h2 className="text-4xl font-bold text-white mb-2 tracking-tight">Technical Practice</h2>
+            <p className="font-mono text-cyan-500 text-sm">Path: /missions/autonomous-devops</p>
           </div>
 
-          <div className="space-y-8 border-l border-slate-800 ml-4 pl-8 relative">
-            
+          <div className="space-y-16">
             {/* Step 1 */}
-            <div className="relative">
-              <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)]" />
-              <h3 className="text-xl font-semibold mb-4">01. Infiltration & Accès</h3>
-              <ul className="space-y-3 text-slate-400 text-sm">
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> Prérequis : Git Bash (ou SSH), GitHub, et Telegram sur votre mobile.</li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> Tentez l'URL : <span className="text-cyan-300">openclaw-exalt-team-[id]-...azure.com</span>. Rien ? C'est normal.</li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> SSH sur la VM : <code className="bg-slate-800 px-2 py-1 rounded text-xs text-pink-400">ssh -o StrictHostKeyChecking=no -i ~/.ssh/consultant azureuser@[IP]</code></li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> Trouvez le token de la gateway et connectez-vous.</li>
-              </ul>
+            <div className="grid md:grid-cols-[1fr_3fr] gap-8 items-start group">
+              <div className="text-5xl font-black text-slate-800 group-hover:text-cyan-500/20 transition-colors">01</div>
+              <div className="space-y-4 bg-slate-900/60 p-8 rounded-3xl border border-slate-800">
+                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Infiltration</h3>
+                <div className="space-y-4 text-slate-400 text-sm leading-relaxed">
+                  <p>• Prérequis : Terminal SSH, Telegram mobile.</p>
+                  <p>• Accès SSH : <code className="bg-black/50 p-2 rounded text-pink-400 border border-slate-800">ssh -o StrictHostKeyChecking=no -i ~/.ssh/consultant azureuser@[IP]</code></p>
+                  <p>• Identifiez le token de la gateway pour débloquer l'interface Openclaw.</p>
+                </div>
+              </div>
             </div>
 
             {/* Step 2 */}
-            <div className="relative">
-              <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-700" />
-              <h3 className="text-xl font-semibold mb-4">02. Profiling de l'Agent</h3>
-              <p className="text-slate-400 text-sm mb-4">
-                Configurez l'agent DevOps parfait. Donnez-lui un nom, un caractère, et surtout des consignes strictes : 
-                <strong> Horodatage systématique des mémos quotidiens.</strong>
-              </p>
-              <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl text-xs font-mono text-cyan-500">
-                Indice : Utilisez l'onglet "Agent" pour affiner son comportement au-delà du simple prompt.
+            <div className="grid md:grid-cols-[1fr_3fr] gap-8 items-start group">
+              <div className="text-5xl font-black text-slate-800 group-hover:text-purple-500/20 transition-colors">02</div>
+              <div className="space-y-6">
+                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Configuration Agentique</h3>
+                <p className="text-sm text-slate-400">Définissez l'identité de l'assistant (Nom, habitudes, caractère). Forcez-le à sauvegarder des <strong>mémos quotidiens horodatés</strong> via l'onglet "Agent".</p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="relative">
-              <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-700" />
-              <h3 className="text-xl font-semibold mb-4">03. Interconnexion (Telegram & GitHub)</h3>
-              <div className="space-y-4 text-slate-400 text-sm">
-                <p>• Configurez <strong>Telegram</strong> en prompt : "Envoie-moi 'coucou' via Telegram".</p>
-                <p>• Connectez votre compte <strong>GitHub</strong> via le Device Login. Restreignez les droits au strict minimum (Principe de moindre privilège).</p>
+            <div className="grid md:grid-cols-[1fr_3fr] gap-8 items-start group">
+              <div className="text-5xl font-black text-slate-800 group-hover:text-blue-500/20 transition-colors">03</div>
+              <div className="space-y-4">
+                <div className="p-6 bg-slate-900/40 border border-slate-800 rounded-2xl">
+                  <h4 className="flex items-center gap-2 font-bold mb-3 text-white"><MessageSquare size={18} className="text-blue-400" /> Telegram</h4>
+                  <p className="text-sm text-slate-400">Configurez Telegram en prompt. Test : <code className="text-blue-400">"Envoie-moi 'coucou' via Telegram"</code>.</p>
+                </div>
               </div>
             </div>
 
             {/* Step 4 */}
-            <div className="relative">
-              <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-slate-700" />
-              <h3 className="text-xl font-semibold mb-4">04. Vibecoding & Automation</h3>
-              <ul className="space-y-3 text-slate-400 text-sm">
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> Générez une Single Page via Openclaw et publiez-la sur un nouveau repo avec GitHub Pages activé.</li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> <strong>Cronjob 1 :</strong> Synchronisation de l'arborescence vers un repo privé toutes les 5 min.</li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> <strong>Cronjob 2 :</strong> Healthcheck de la page publique avec alerte Telegram.</li>
-                <li className="flex items-start gap-2"><div className="mt-1.5 w-1 h-1 rounded-full bg-cyan-500 shrink-0" /> <strong>Final :</strong> Auto-réparation. Si le site tombe, l'agent doit forcer un nouveau commit pour relancer le build.</li>
-              </ul>
+            <div className="grid md:grid-cols-[1fr_3fr] gap-8 items-start group">
+              <div className="text-5xl font-black text-slate-800 group-hover:text-emerald-500/20 transition-colors">04</div>
+              <div className="space-y-6 bg-slate-900 border border-slate-800 p-8 rounded-3xl">
+                <h3 className="text-xl font-bold text-white uppercase tracking-wider">Automation & Cron</h3>
+                <ul className="space-y-4 text-sm text-slate-400">
+                  <li className="flex gap-4">
+                    <Code2 className="text-cyan-500 shrink-0" size={20} />
+                    <span><strong>Vibecoding :</strong> Déployez une Single Page sur un repository externe et activez les Pages publiques.</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <Terminal className="text-purple-500 shrink-0" size={20} />
+                    <span><strong>Cronjobs :</strong> Sync toutes les 5 min + Healthcheck avec alerte Telegram.</span>
+                  </li>
+                  <li className="flex gap-4">
+                    <ShieldAlert className="text-emerald-500 shrink-0" size={20} />
+                    <span><strong>Auto-Healing :</strong> En cas de fail du site, l'agent doit forcer un commit de réparation.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-
           </div>
         </section>
 
-        {/* BONUS SECTION */}
-        <section className="p-8 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20">
-          <div className="flex items-center gap-4 mb-4">
-            <ShieldAlert className="text-cyan-400" />
-            <h2 className="text-xl font-bold">Audit de Sécurité (Bonus)</h2>
-          </div>
-          <p className="text-slate-400 text-sm">
-            Il reste des failles dans cette architecture. Analysez l'exercice et proposez des améliorations pour sécuriser davantage l'agent Openclaw.
+        {/* --- BONUS --- */}
+        <section className="p-12 bg-gradient-to-br from-slate-900 to-black rounded-3xl border border-slate-800 text-center space-y-4">
+          <Lock className="mx-auto text-cyan-500" size={32} />
+          <h2 className="text-2xl font-bold text-white italic">Security Audit</h2>
+          <p className="max-w-xl mx-auto text-sm text-slate-500 font-mono">
+            Analysez les vecteurs d'attaque potentiels de cette configuration. 
+            Quid du stockage des clés et de l'autonomie de l'agent ?
           </p>
         </section>
 
       </main>
 
-      {/* Footer / Status Bar */}
-      <footer className="fixed bottom-0 w-full border-t border-slate-900 bg-slate-950/80 backdrop-blur-md px-6 py-3 flex justify-between items-center text-[10px] uppercase tracking-widest text-slate-500">
+      {/* --- FOOTER --- */}
+      <footer className="fixed bottom-0 w-full border-t border-slate-800 bg-[#020617]/90 backdrop-blur-md px-6 py-4 flex justify-between items-center font-mono text-[10px] uppercase tracking-[0.3em] text-slate-500">
         <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" /> System Online</span>
-          <span>Gateway: Secure</span>
+          <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" /> CLUSTER_LIVE</span>
         </div>
-        <div>Exalt Team // Openclaw Training 2026</div>
+        <div>EXALT_CORE // 2026</div>
       </footer>
     </div>
   );
-};
-
-export default TP_Openclaw;
+}
