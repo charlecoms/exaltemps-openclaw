@@ -17,8 +17,6 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-const Github = GithubIcon || GithubIcon;
-
 const TP_Openclaw = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-cyan-500/30 font-sans">
