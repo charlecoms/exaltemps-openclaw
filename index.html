@@ -23,7 +23,7 @@
         <div class="glow bottom-[-5%] right-[-5%] w-[500px] h-[500px] bg-purple-800"></div>
     </div>
 
-    <main class="relative z-10 max-w-4xl mx-auto px-6 py-24 space-y-32">
+    <main class="relative z-10 max-w-4xl mx-auto px-6 py-24 space-y-24">
         
         <header class="space-y-8">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/5 bg-white/5 text-[10px] font-mono tracking-[0.3em] uppercase">
@@ -34,62 +34,67 @@
                 <h1 class="text-7xl md:text-8xl font-black tracking-tighter text-white italic leading-none">
                     OPEN<span class="ai-text-gradient">CLAW</span>
                 </h1>
-                <p class="text-xl text-slate-500 max-w-2xl font-light leading-relaxed">
-                    L'orchestrateur DevOps nouvelle génération. Une fusion entre intelligence agentique et infrastructure Cloud pour une automatisation totale.
-                </p>
+                <div class="glass-card p-8 border-cyan-500/20">
+                    <h2 class="text-cyan-400 font-bold uppercase text-xs tracking-widest mb-4 italic">// Dossier d'Introduction</h2>
+                    <p class="text-lg text-slate-300 leading-relaxed font-light">
+                        Openclaw n'est pas un simple bot. C'est un **orchestrateur agentique LLM-native** conçu pour interfacer vos prompts avec votre infrastructure réelle. Il peut coder, commit, monitorer et s'auto-réparer. En gros, c'est le stagiaire DevOps qui ne dort jamais, ne râle jamais, mais qui peut tout casser si vous ne le dressez pas correctement.
+                    </p>
+                </div>
             </div>
         </header>
 
         <section class="space-y-10">
             <h2 class="text-sm font-bold uppercase tracking-[0.4em] text-slate-600 flex items-center gap-3">
-                <i data-lucide="shield-alert" size="18" class="text-red-900"></i> Rapports d'incidents (REX)
+                <i data-lucide="shield-alert" size="18" class="text-red-900"></i> Pourquoi on fait ce TP (La réalité du terrain)
             </h2>
             <div class="grid md:grid-cols-2 gap-6 font-light text-sm">
                 <div class="glass-card p-8 space-y-4 border-red-950/30">
-                    <h3 class="text-red-500 font-bold uppercase tracking-widest text-xs italic">Incident #742 - The DB Wipe</h3>
-                    <p>Dans une scale-up, un agent a interprété une commande de "nettoyage de logs" comme une instruction de purge complète d'un cluster RDS. <span class="text-red-400/50 italic font-mono">4h de downtime.</span></p>
+                    <h3 class="text-red-500 font-bold uppercase tracking-widest text-xs italic">Incident #1 : Le Ghost-Trading (Knight Capital)</h3>
+                    <p>En 2012, un mauvais déploiement d'une nouvelle version de logiciel a activé un vieux code de test. L'automate a brûlé **440 millions de dollars** en 45 minutes en achetant/vendant n'importe quoi. <br> <a href="https://en.wikipedia.org/wiki/Knight_Capital_Group" class="text-cyan-500 underline text-[10px]">Voir le rapport technique</a></p>
                 </div>
                 <div class="glass-card p-8 space-y-4 border-red-950/30">
-                    <h3 class="text-red-500 font-bold uppercase tracking-widest text-xs italic">Incident #109 - Git Bombing</h3>
-                    <p>Lors d'un conflit de merge, l'agent a généré 4 000 commits en 10 minutes, entraînant le bannissement temporaire du compte GitHub de l'entreprise.</p>
+                    <h3 class="text-red-500 font-bold uppercase tracking-widest text-xs italic">Incident #2 : Le Grand Flush (GitLab)</h3>
+                    <p>En 2017, un admin a accidentellement supprimé 300Go de données de prod sur la base PostgreSQL suite à une confusion de shells. Les sauvegardes ne marchaient pas. <br> <a href="https://about.gitlab.com/blog/2017/02/01/gitlab-dot-com-database-incident/" class="text-cyan-500 underline text-[10px]">Post-mortem officiel</a></p>
                 </div>
             </div>
         </section>
 
         <section class="space-y-16">
-            <h2 class="text-4xl font-black text-white uppercase tracking-tighter italic border-b border-white/5 pb-8">Parcours Technique</h2>
+            <h2 class="text-4xl font-black text-white uppercase tracking-tighter italic border-b border-white/5 pb-8">Feuille de Route du TP</h2>
 
             <div class="space-y-12">
                 <div class="glass-card p-8 md:p-10 space-y-6 border-l-4 border-l-cyan-500 transition-all hover:bg-white/[0.02]">
                     <div class="flex justify-between items-start">
-                        <h4 class="text-2xl font-bold text-white tracking-tight">01. Infiltration et Accès</h4>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">01. Infiltration & Gateway</h4>
                         <i data-lucide="key" class="text-cyan-500"></i>
                     </div>
                     <div class="space-y-4 text-sm leading-relaxed">
-                        <p>L'accès via l'URL Azure est actuellement verrouillé. Vous devez extraire le token de la gateway manuellement.</p>
+                        <p>L'accès via l'URL Azure est actuellement verrouillé par un token. Votre mission : le trouver dans la VM.</p>
                         <ul class="space-y-2 list-disc list-inside text-slate-500">
-                            <li>Prérequis : Git Bash (SSH), compte GitHub et Telegram opérationnel.</li>
-                            <li>Connectez-vous à la VM cible :</li>
+                            <li><strong class="text-white">Prérequis :</strong> Git Bash (ou terminal SSH), compte GitHub, Application Telegram.</li>
+                            <li><strong class="text-white">Cible :</strong> <code>openclaw-exalt-team-[id]-90cd03b8.francecentral.cloudapp.azure.com</code></li>
+                            <li><strong class="text-white">Accès VM :</strong> Connectez-vous avec votre clé SSH :</li>
                         </ul>
                         <code class="block bg-black p-5 rounded-2xl border border-white/5 text-pink-500 font-mono text-xs select-all overflow-x-auto">
                             ssh -o StrictHostKeyChecking=no -i ~/.ssh/consultant azureuser@[IP]
                         </code>
+                        <p class="italic text-cyan-400/70 text-xs">Indice : Une fois dans la VM, cherchez où la Gateway cache son secret de connexion...</p>
                     </div>
                 </div>
 
                 <div class="glass-card p-8 md:p-10 space-y-6 border-l-4 border-l-purple-600 transition-all hover:bg-white/[0.02]">
                     <div class="flex justify-between items-start">
-                        <h4 class="text-2xl font-bold text-white tracking-tight">02. Configuration Agentique</h4>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">02. Dressage de l'Agent</h4>
                         <i data-lucide="brain-circuit" class="text-purple-600"></i>
                     </div>
                     <div class="space-y-4 text-sm leading-relaxed">
-                        <p>Définissez l'identité de votre assistant. L'agent doit apprendre qui vous êtes et comment travailler selon vos standards.</p>
+                        <p>Une fois sur l'interface, faites connaissance avec votre nouvel assistant. Ne soyez pas timide, mais soyez précis.</p>
                         <div class="p-6 bg-white/[0.02] rounded-2xl border border-white/5 space-y-3">
-                            <p class="font-bold text-xs uppercase text-slate-400 tracking-widest">Configuration requise :</p>
-                            <ul class="space-y-2 text-slate-500 italic">
-                                <li>• Nom, caractère et bonnes pratiques DevOps de l'agent.</li>
-                                <li>• <strong class="text-slate-300">Crucial :</strong> Activation de la sauvegarde des discussions par mémos quotidiens horodatés.</li>
-                                <li>• Présentation de votre profil (nom, habitudes de travail).</li>
+                            <ul class="space-y-2 text-slate-500">
+                                <li>• <strong class="text-slate-300 italic">Identité :</strong> Configurez son nom et imposez-lui un caractère d'expert DevOps (bonnes pratiques obligatoires).</li>
+                                <li>• <strong class="text-slate-300 italic">Mémoire :</strong> Configurez-le pour sauvegarder vos discussions quotidiennement dans des mémos horodatés.</li>
+                                <li>• <strong class="text-slate-300 italic">Méthode :</strong> Utilisez le prompt ou l'onglet "Agent". Plus le prompt est carré, moins vous galérerez.</li>
+                                <li>• <strong class="text-slate-300 italic">Bio :</strong> Dites-lui qui vous êtes, votre nom et vos habitudes de travail.</li>
                             </ul>
                         </div>
                     </div>
@@ -97,46 +102,46 @@
 
                 <div class="glass-card p-8 md:p-10 space-y-6 border-l-4 border-l-blue-600 transition-all hover:bg-white/[0.02]">
                     <div class="flex justify-between items-start">
-                        <h4 class="text-2xl font-bold text-white tracking-tight">03. Communications & Hub</h4>
-                        <i data-lucide="message-square" class="text-blue-600"></i>
+                        <h4 class="text-2xl font-bold text-white tracking-tight">03. Interconnexions (Telegram & GitHub)</h4>
+                        <i data-lucide="share-2" class="text-blue-600"></i>
                     </div>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-3 p-6 bg-blue-500/5 rounded-2xl border border-blue-500/10">
-                            <h5 class="text-xs font-bold uppercase text-blue-400">Telegram Sync</h5>
-                            <p class="text-xs text-slate-500 leading-relaxed italic">Configurez l'intégration uniquement via prompt. L'agent doit confirmer par un "coucou" sur votre mobile.</p>
+                            <h5 class="text-xs font-bold uppercase text-blue-400">Sync Telegram</h5>
+                            <p class="text-xs text-slate-500 leading-relaxed">Configurez Telegram <span class="font-bold">uniquement en prompt</span>. Demandez-lui : "Envoie-moi 'coucou' sur Telegram". S'il ne le fait pas, recommencez.</p>
                         </div>
                         <div class="space-y-3 p-6 bg-purple-500/5 rounded-2xl border border-purple-500/10">
-                            <h5 class="text-xs font-bold uppercase text-purple-400">GitHub Device Flow</h5>
-                            <p class="text-xs text-slate-500 leading-relaxed italic">Connectez votre compte. Restreignez les droits du token au strict nécessaire pour cette mission.</p>
+                            <h5 class="text-xs font-bold uppercase text-purple-400">GitHub Handshake</h5>
+                            <p class="text-xs text-slate-500 leading-relaxed">Connectez votre compte via le <span class="italic">Device Login</span>. Créez un token d'accès avec le <span class="font-bold">Strict Minimum</span> de droits nécessaires.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="glass-card p-10 space-y-10 border border-cyan-500/20 shadow-2xl shadow-cyan-500/5">
                     <div class="space-y-2 text-center">
-                        <h4 class="text-3xl font-black text-white italic tracking-tighter uppercase">Automation & Cron</h4>
-                        <p class="text-xs text-cyan-500 font-mono">Phase finale : Autonomie complète</p>
+                        <h4 class="text-3xl font-black text-white italic tracking-tighter uppercase">Automation, Cron & Vibecoding</h4>
+                        <p class="text-xs text-cyan-500 font-mono italic">"Look Mom, no hands!"</p>
                     </div>
                     <div class="grid gap-6">
                         <div class="flex gap-6 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all group">
-                            <i data-lucide="code" class="text-slate-700 group-hover:text-cyan-500 transition-colors"></i>
+                            <i data-lucide="code" class="text-slate-700 group-hover:text-cyan-500"></i>
                             <div class="space-y-2">
-                                <span class="font-bold text-white text-sm">Vibecoding</span>
-                                <p class="text-xs leading-relaxed text-slate-500">Demandez à Openclaw de coder une Single Page, de créer un repo et d'activer GitHub Pages automatiquement.</p>
+                                <span class="font-bold text-white text-sm italic">04a. Vibecoding & GitHub Pages</span>
+                                <p class="text-xs leading-relaxed text-slate-500 italic">Faites coder un front Single Page à Openclaw, demandez-lui de le push sur un nouveau repo public et d'activer les GitHub Pages. Vérifiez l'URL.</p>
                             </div>
                         </div>
                         <div class="flex gap-6 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all group">
-                            <i data-lucide="refresh-cw" class="text-slate-700 group-hover:text-cyan-500 transition-colors"></i>
+                            <i data-lucide="refresh-cw" class="text-slate-700 group-hover:text-cyan-500"></i>
                             <div class="space-y-2">
-                                <span class="font-bold text-white text-sm">Sync Cron</span>
-                                <p class="text-xs leading-relaxed text-slate-500">Synchronisation automatique de l'arborescence locale vers un repository privé toutes les 5 minutes.</p>
+                                <span class="font-bold text-white text-sm italic">04b. La Sauvegarde Paranoïaque (Cron)</span>
+                                <p class="text-xs leading-relaxed text-slate-500 italic">Demandez une synchronisation de toute son arborescence locale vers un repo PRIVÉ toutes les 5 min. Interdiction formelle de leaker une clé d'accès dans le repo !</p>
                             </div>
                         </div>
                         <div class="flex gap-6 p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 transition-all group">
-                            <i data-lucide="activity" class="text-slate-700 group-hover:text-cyan-500 transition-colors"></i>
+                            <i data-lucide="activity" class="text-slate-700 group-hover:text-cyan-500"></i>
                             <div class="space-y-2">
-                                <span class="font-bold text-white text-sm">Healthcheck & Auto-Healing</span>
-                                <p class="text-xs leading-relaxed text-slate-500">Monitoring de la page publique avec alerte Telegram. En cas de fail, l'agent doit forcer un commit pour déclencher un redeploy.</p>
+                                <span class="font-bold text-white text-sm italic">04c. Healthcheck & Auto-Healing (Le Graal)</span>
+                                <p class="text-xs leading-relaxed text-slate-500 italic">Créez un cronjob qui vérifie si votre site est online. Si ça tombe : notification Telegram + l'agent doit faire un commit automatique pour forcer le redeploy de GitHub Pages.</p>
                             </div>
                         </div>
                     </div>
@@ -146,15 +151,15 @@
 
         <section class="text-center py-20 border-t border-white/5 space-y-6">
             <i data-lucide="lock" class="mx-auto text-slate-800" size="48"></i>
-            <h2 class="text-2xl font-bold text-white italic tracking-tight">Security Audit & Feedback</h2>
-            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed">
-                L'exercice comporte volontairement des failles de sécurité. Identifiez les vulnérabilités (tokens, droits, stockage des clés) et proposez des solutions de durcissement.
+            <h2 class="text-2xl font-bold text-white italic tracking-tight">Security Audit & Feedback (Bonus)</h2>
+            <p class="text-sm text-slate-600 max-w-lg mx-auto leading-relaxed italic">
+                Cet exercice est volontairement une "passoire" par endroits. S'il vous reste du temps, identifiez les failles (gestion des tokens, stockage des clés, droits SSH) et proposez des correctifs.
             </p>
         </section>
     </main>
 
     <footer class="w-full py-12 border-t border-white/5 text-center font-mono text-[9px] uppercase tracking-[0.6em] text-slate-700">
-        Exalt Team // Openclaw_Protocol_v.2026.03
+        Exalt Team // Openclaw_Protocol_v.2026.03 // Have Fun or Root Everything
     </footer>
 
     <script>
