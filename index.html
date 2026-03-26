@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP Openclaw - Exalt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #020617; color: #cbd5e1; font-family: sans-serif; }
+        .glow { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.15; pointer-events: none; }
+    </style>
+</head>
+<body class="selection:bg-cyan-500/30">
+
+    <div class="glow top-[-10%] left-[-10%] w-[400px] h-[400px] bg-cyan-600"></div>
+    <div class="glow bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-purple-600"></div>
+
+    <main class="relative z-10 max-w-4xl mx-auto px-6 py-20 space-y-24">
+        
+        <header class="space-y-6">
+            <div class="inline-block px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-xs font-mono tracking-tighter">
+                MISSION_LOG: ONLINE
+            </div>
+            <h1 class="text-6xl font-black text-white tracking-tighter uppercase italic">
+                OPEN<span class="text-cyan-500">CLAW</span>
+            </h1>
+            <p class="text-xl text-slate-400 leading-relaxed max-w-2xl font-light">
+                L'orchestrateur DevOps autonome. Votre binôme IA capable de coder, déployer et monitorer en autonomie totale.
+            </p>
+        </header>
+
+        <section class="space-y-8">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-3 italic">
+                <i data-lucide="alert-triangle" class="text-amber-500"></i> Incident Reports
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-md">
+                    <h3 class="text-red-400 font-mono text-xs uppercase mb-3">#01 The DB Wipe</h3>
+                    <p class="text-sm">Une scale-up a vu son cluster RDS purgé par erreur. 4h de downtime.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 backdrop-blur-md">
+                    <h3 class="text-red-400 font-mono text-xs uppercase mb-3">#02 Secret Leakage</h3>
+                    <p class="text-sm">Un correctif a poussé des clés AWS Master sur un accès public. Risque critique.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-12">
+            <h2 class="text-4xl font-bold text-white border-b border-slate-800 pb-4">Mission Instructions</h2>
+            
+            <div class="space-y-12 border-l-2 border-slate-800 ml-4 pl-8">
+                <div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-4 tracking-wider uppercase italic">01. Accès</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        SSH sur la VM : <br>
+                        <code class="block bg-black p-3 mt-2 rounded border border-slate-800 text-pink-400 font-mono italic">
+                            ssh -o StrictHostKeyChecking=no -i ~/.ssh/consultant azureuser@[IP]
+                        </code>
+                        <br>Trouvez le token de la gateway pour débloquer Openclaw.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-purple-400 mb-4 tracking-wider uppercase italic">02. Identité</h3>
+                    <p class="text-sm text-slate-400">Configurez l'agent : Nom, caractère, et sauvegarde des mémos horodatés via l'onglet "Agent".</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-blue-400 mb-4 tracking-wider uppercase italic">03. Intégrations</h3>
+                    <p class="text-sm text-slate-400">Configurez Telegram en prompt ("Envoie-moi coucou") et liez votre GitHub.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-400 mb-4 tracking-wider uppercase italic">04. Automation</h3>
+                    <ul class="text-sm text-slate-400 space-y-3">
+                        <li>• Déployez une Single Page via Vibecoding + GitHub Pages.</li>
+                        <li>• Sync auto toutes les 5 min sur un repo privé.</li>
+                        <li>• Healthcheck avec alerte Telegram et auto-réparation.</li>
+                    </ul>
+
