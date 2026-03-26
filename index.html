@@ -3,78 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP Openclaw - Expert DevOps</title>
+    <title>TP Openclaw - Cyber DevOps Session</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .bg-glow { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.1; pointer-events: none; z-index: 0; }
-        .glass { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.5); }
-        .step-number { background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&display=swap');
+        
+        /* FOND NOIR PUR ET TYPO MODERNE */
+        body { background-color: #000000; color: #e2e8f0; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* EFFETS GLOW SUBTILS ET FROIDS */
+        .bg-glow { position: fixed; border-radius: 50%; filter: blur(150px); opacity: 0.12; pointer-events: none; z-index: 0; }
+        
+        /* CARTES FUMÉES MINIMALISTES */
+        .glass { background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.03); }
+        
+        /* GRADIENT IA CONTEMPORAIN */
+        .ai-gradient { background: linear-gradient(135deg, #00ffff 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .step-number { background: linear-gradient(135deg, #00ffff 0%, #8b5cf6 100%); }
     </style>
 </head>
 <body class="selection:bg-cyan-500/30">
 
-    <div class="bg-glow top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-500"></div>
-    <div class="bg-glow bottom-[10%] right-[-5%] w-[400px] h-[400px] bg-purple-600"></div>
+    <div class="bg-glow top-[-15%] left-[-10%] w-[600px] h-[600px] bg-cyan-500"></div>
+    <div class="bg-glow bottom-[5%] right-[-10%] w-[500px] h-[500px] bg-purple-700"></div>
 
-    <main class="relative z-10 max-w-5xl mx-auto px-6 py-20">
+    <main class="relative z-10 max-w-5xl mx-auto px-6 py-24">
         
-        <header class="mb-32 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono tracking-widest uppercase">
-                <span class="relative flex h-2 w-2">
+        <header class="mb-36 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-black/50 text-slate-500 text-[10px] font-mono tracking-widest uppercase">
+                <span class="relative flex h-1.5 w-1.5">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-cyan-500"></span>
                 </span>
-                Session de TP : DevOps Agentique
+                SESSION_ID: DevOps_Autonomous_Lab_2026
             </div>
-            <h1 class="text-7xl font-extrabold tracking-tighter text-white italic">
-                OPEN<span class="text-cyan-500">CLAW</span>
+            <h1 class="text-8xl font-extrabold tracking-tighter text-white italic">
+                OPEN<span class="ai-gradient font-black">CLAW</span>
             </h1>
-            <p class="text-xl text-slate-400 max-w-3xl leading-relaxed font-light">
-                Bienvenue dans l'ère de l'ingénierie autonome. Openclaw n'est pas un simple outil, c'est un agent capable d'orchestrer votre infrastructure via le langage naturel.
+            <p class="text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
+                Bienvenue dans l'ère de l'ingénierie agentique. Openclaw n'est pas un simple outil, c'est un agent capable d'orchestrer votre infrastructure via le langage naturel.
             </p>
         </header>
 
-        <section class="mb-32 space-y-10">
-            <h2 class="text-2xl font-bold flex items-center gap-3">
-                <i data-lucide="alert-circle" class="text-amber-500"></i> Retours d'expérience : quand l'IA s'emballe
+        <section class="mb-36 space-y-12">
+            <h2 class="text-xl font-bold flex items-center gap-3 text-slate-300">
+                <i data-lucide="shield-alert" class="text-amber-600" size="18"></i> REX : quand l'IA s'emballe
             </h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-3xl hover:border-red-500/50 transition-colors">
-                    <h3 class="text-red-400 font-bold mb-4 uppercase tracking-tighter">Le "Flush" de Base de Données</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                <div class="glass p-8 rounded-3xl hover:border-red-500/20 transition-all duration-500 group">
+                    <h3 class="text-red-400 font-bold mb-4 uppercase tracking-tighter text-sm flex items-center gap-2">
+                        <i data-lucide="database-zap" size="16"></i> Le "Flush" de Base de Données
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed group-hover:text-slate-400">
                         Dans une Fintech, un agent mal configuré a interprété une commande de "nettoyage des logs" comme une instruction de purge complète d'un cluster RDS en production. Résultat : 4 heures d'interruption de service.
                     </p>
                 </div>
-                <div class="glass p-8 rounded-3xl hover:border-red-500/50 transition-colors">
-                    <h3 class="text-red-400 font-bold mb-4 uppercase tracking-tighter">Le Déluge de Commits</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                <div class="glass p-8 rounded-3xl hover:border-red-500/20 transition-all duration-500 group">
+                    <h3 class="text-red-400 font-bold mb-4 uppercase tracking-tighter text-sm flex items-center gap-2">
+                        <i data-lucide="git-branch" size="16"></i> Le Déluge de Commits
+                    </h3>
+                    <p class="text-sm text-slate-500 leading-relaxed group-hover:text-slate-400">
                         En tentant de résoudre un conflit de fusion (merge), un agent a généré plus de 4 000 commits en 10 minutes, provoquant le blocage temporaire du compte GitHub de l'entreprise pour activité suspecte.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-16">
-            <h2 class="text-4xl font-black text-white uppercase tracking-tighter border-b border-slate-800 pb-6">Instructions de Mission</h2>
+        <section class="space-y-20">
+            <h2 class="text-3xl font-black text-white uppercase tracking-tighter border-b border-slate-900 pb-8 flex items-center gap-3">
+                <i data-lucide="terminal" class="text-cyan-500"></i> Mission Objectives
+            </h2>
 
-            <div class="flex gap-8 group">
+            <div class="flex gap-10 group">
                 <div class="flex flex-col items-center">
-                    <div class="step-number w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-[0_0_20px_rgba(6,182,212,0.4)]">1</div>
-                    <div class="w-px h-full bg-slate-800 my-4 group-last:hidden"></div>
+                    <div class="step-number w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-[0_0_20px_rgba(0,255,255,0.2)]">1</div>
+                    <div class="w-px h-full bg-slate-900 my-4 group-last:hidden"></div>
                 </div>
                 <div class="pb-16 space-y-6 flex-1">
                     <h3 class="text-2xl font-bold text-white tracking-tight">Infiltration et Accès</h3>
-                    <div class="glass p-6 rounded-2xl space-y-4 text-slate-400 italic">
-                        <ul class="list-disc list-inside space-y-2 text-sm">
-                            <li>Prérequis : Git Bash (ou CLI SSH), compte GitHub et Telegram installé.</li>
-                            <li>Tentez l'URL : <span class="text-cyan-400">openclaw-exalt-team-[id]-...azure.com</span>. L'accès est refusé ? C'est normal.</li>
-                            <li>Connectez-vous en SSH à la VM (clé fournie) :</li>
-                        </ul>
-                        <div class="bg-black/80 p-4 rounded-xl font-mono text-pink-400 text-sm border border-slate-700 select-all">
-                            ssh -o StrictHostKeyChecking=no -i ~/.ssh/consultant azureuser@[IP]
-                        </div>
-                        <p class="text-xs">Objectif : Extraire le token de la gateway pour établir la connexion.</p>
+                    <div class="glass p-8 rounded-3xl space-y-5 text-slate-500 italic">
+                        <ul class="list-disc list-inside space-y-2.5 text-sm">
+                            <li>Prérequis : CLI SSH (Git Bash), compte GitHub, Telegram installé.</li>
+                            <li>Tentez l'URL : <span class="text-cyan-400 select-all">openclaw-exalt-team-[id]-...azure.com</span>. L'accès est refusé ? C'est normal.</li>
 
